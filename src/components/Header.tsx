@@ -4,18 +4,19 @@ import { CURRENCIES, CURRENCY_CODES, type CurrencyCode } from "@/lib/currency";
 import type { Language } from "@/lib/i18n";
 import { usePrefs } from "./prefs";
 
-function Scale() {
+/** Two weights on a tipped beam: the thing being compared, reduced. */
+function Mark() {
   return (
-    <svg viewBox="0 0 32 32" aria-hidden className="h-9 w-9 shrink-0">
-      <rect width="32" height="32" rx="6" className="fill-ink" />
-      <g stroke="#ffffff" strokeWidth="1.8" strokeLinecap="round" fill="none">
-        <path d="M16 7.5v17" />
-        <path d="M7 11h18" />
-        <path d="M9.5 25h13" />
-        <path d="M3.5 18.5 7 11l3.5 7.5a3.5 3.5 0 0 1-7 0Z" fill="#ffffff" fillOpacity="0.25" />
-        <path d="M21.5 18.5 25 11l3.5 7.5a3.5 3.5 0 0 1-7 0Z" fill="#ffffff" fillOpacity="0.25" />
-      </g>
-      <circle cx="16" cy="7.5" r="2" fill="#ffffff" />
+    <svg viewBox="0 0 28 28" aria-hidden className="h-8 w-8 shrink-0 text-ink">
+      <path
+        d="M4.5 17 L23.5 11.4"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        fill="none"
+      />
+      <circle cx="4.8" cy="17.4" r="3.2" fill="currentColor" />
+      <circle cx="23.2" cy="11.2" r="2.4" stroke="currentColor" strokeWidth="1.6" fill="none" />
     </svg>
   );
 }
@@ -37,7 +38,7 @@ export function Header({
     <header className="border-b border-rule">
       <div className="mx-auto flex max-w-5xl flex-wrap items-center gap-x-4 gap-y-3 px-4 py-4 sm:px-6">
         <div className="flex min-w-0 flex-1 items-center gap-3">
-          <Scale />
+          <Mark />
           <div className="min-w-0">
             <h1 className="text-[21px] leading-none font-bold tracking-tight text-ink sm:text-[23px]">
               {t("brand.name")}

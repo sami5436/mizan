@@ -1,26 +1,92 @@
 @import "tailwindcss";
 
+@theme {
+  --color-paper: #f4efe7;
+  --color-paper-deep: #e9e2d6;
+  --color-card: #fdfbf7;
+  --color-ink: #23211f;
+  --color-muted: #7a736b;
+  --color-rule: #e3dbcd;
+  --color-rule-soft: #eee8dc;
+  --color-gold: #9a6c14;
+  --color-gold-leaf: #dcb45c;
+  --color-gold-wash: #f8f0dd;
+  --color-ok: #2a7a55;
+  --color-warn: #b07615;
+  --color-high: #a5382a;
+
+  --font-sans: var(--font-sans), system-ui, sans-serif;
+
+  --radius-card: 12px;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  color-scheme: light;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-image: radial-gradient(circle at 15% -8%, rgba(220, 180, 92, 0.18), transparent 46%);
+  background-attachment: fixed;
+}
+
+html[dir="rtl"] body {
+  font-family: var(--font-arabic), var(--font-sans), system-ui, sans-serif;
+}
+
+/* Figures: same family as the text, just aligned and tightened. */
+.num {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+  letter-spacing: -0.015em;
+  unicode-bidi: plaintext;
+}
+
+/* Quiet section label. Sentence case, no shouting. Wrapped in :where() so a
+   utility class on the element still wins. */
+:where(.label) {
+  font-size: 12px;
+  line-height: 1.3;
+  font-weight: 500;
+  color: var(--color-muted);
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+::selection {
+  background: var(--color-gold-leaf);
+  color: var(--color-ink);
+}
+
+.focus-gold:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 1px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .rise {
+    animation: rise 260ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }

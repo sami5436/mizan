@@ -74,7 +74,7 @@ export function RatesPanel({
             viewBox="0 0 16 16"
             className={`h-3.5 w-3.5 ${loading ? "animate-spin" : ""}`}
             fill="none"
-            stroke="#d8ae4e"
+            stroke="#dcb45c"
             strokeWidth="1.6"
           >
             <path d="M14 8a6 6 0 1 1-1.8-4.3" strokeLinecap="round" />

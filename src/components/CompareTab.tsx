@@ -54,14 +54,26 @@ export function CompareTab({
           </button>
         }
       >
-        <div className="grid grid-cols-2 gap-x-4 gap-y-1 sm:grid-cols-4">
-          <LedgerRow label={t("form.karat")} value={`${karat}K`} />
-          <LedgerRow
-            label={t("form.weight")}
-            value={`${number(context.weightGrams, 3)} ${t("form.weightUnit")}`}
-          />
-          <LedgerRow label={t("results.goldValue")} value={money(context.goldValue)} />
-          <LedgerRow label={t("results.expected")} value={money(context.expectedTotal)} strong />
+        <div className="grid grid-cols-2 gap-x-4 gap-y-3 sm:grid-cols-4">
+          {[
+            { label: t("form.karat"), value: `${karat}K`, strong: false },
+            {
+              label: t("form.weight"),
+              value: `${number(context.weightGrams, 3)} ${t("form.weightUnit")}`,
+              strong: false,
+            },
+            { label: t("results.goldValue"), value: money(context.goldValue), strong: false },
+            { label: t("results.expected"), value: money(context.expectedTotal), strong: true },
+          ].map((cell) => (
+            <div key={cell.label} className="flex flex-col gap-0.5">
+              <span className="label">{cell.label}</span>
+              <span
+                className={`num text-[15px] ${cell.strong ? "font-semibold text-ink" : "text-ink"}`}
+              >
+                {cell.value}
+              </span>
+            </div>
+          ))}
         </div>
         {!ready ? (
           <p className="mt-2 border-t border-rule-soft pt-3 text-xs text-muted">

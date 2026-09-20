@@ -8,14 +8,14 @@ function Scale() {
   return (
     <svg viewBox="0 0 32 32" aria-hidden className="h-9 w-9 shrink-0">
       <rect width="32" height="32" rx="6" className="fill-ink" />
-      <g stroke="#dcb45c" strokeWidth="1.8" strokeLinecap="round" fill="none">
+      <g stroke="#ffffff" strokeWidth="1.8" strokeLinecap="round" fill="none">
         <path d="M16 7.5v17" />
         <path d="M7 11h18" />
         <path d="M9.5 25h13" />
-        <path d="M3.5 18.5 7 11l3.5 7.5a3.5 3.5 0 0 1-7 0Z" fill="#dcb45c" fillOpacity="0.22" />
-        <path d="M21.5 18.5 25 11l3.5 7.5a3.5 3.5 0 0 1-7 0Z" fill="#dcb45c" fillOpacity="0.22" />
+        <path d="M3.5 18.5 7 11l3.5 7.5a3.5 3.5 0 0 1-7 0Z" fill="#ffffff" fillOpacity="0.25" />
+        <path d="M21.5 18.5 25 11l3.5 7.5a3.5 3.5 0 0 1-7 0Z" fill="#ffffff" fillOpacity="0.25" />
       </g>
-      <circle cx="16" cy="7.5" r="2" fill="#dcb45c" />
+      <circle cx="16" cy="7.5" r="2" fill="#ffffff" />
     </svg>
   );
 }
@@ -35,7 +35,6 @@ export function Header({
 
   return (
     <header className="border-b border-rule">
-      <div aria-hidden className="h-1 w-full bg-gradient-to-r from-gold via-gold-leaf to-gold/30" />
       <div className="mx-auto flex max-w-5xl flex-wrap items-center gap-x-4 gap-y-3 px-4 py-4 sm:px-6">
         <div className="flex min-w-0 flex-1 items-center gap-3">
           <Scale />
@@ -51,7 +50,7 @@ export function Header({
           <button
             type="button"
             onClick={() => onLanguageChange(language === "en" ? "ar" : "en")}
-            className="focus-gold rounded-card border border-rule bg-card px-3 py-2 text-[13px] font-medium text-ink transition-colors hover:border-gold hover:text-gold"
+            className="focus-ring rounded-card border border-rule bg-card px-3 py-2 text-[13px] font-medium text-ink transition-colors hover:border-ink hover:text-ink"
           >
             {t("actions.language")}
           </button>
@@ -61,7 +60,7 @@ export function Header({
               value={currency}
               onChange={(event) => onCurrencyChange(event.target.value as CurrencyCode)}
               aria-label="Currency"
-              className="focus-gold num appearance-none rounded-card border border-rule bg-card py-2 text-[13px] font-medium text-ink transition-colors hover:border-gold ltr:pl-3 ltr:pr-8 rtl:pr-3 rtl:pl-8"
+              className="focus-ring num appearance-none rounded-card border border-rule bg-card py-2 text-[13px] font-medium text-ink transition-colors hover:border-ink ltr:pl-3 ltr:pr-8 rtl:pr-3 rtl:pl-8"
             >
               {CURRENCY_CODES.map((code) => (
                 <option key={code} value={code}>

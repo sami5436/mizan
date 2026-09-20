@@ -91,34 +91,34 @@ export function ReverseTab({
             )}
           </Field>
 
-          <div className="rounded-card border border-rule bg-paper/50 px-3 py-2">
+          <div className="rounded-card border border-rule bg-paper-deep px-3 py-2">
             <LedgerRow
               label={`${t("form.pricePerGram")} · ${form.karat}K`}
               value={money(rate)}
-              tone="gold"
+              tone="strong"
             />
           </div>
         </div>
       </Card>
 
       {!ready ? (
-        <div className="rounded-card border border-dashed border-rule bg-card/50 px-5 py-10 text-center lg:sticky lg:top-4">
+        <div className="rounded-card border border-dashed border-rule bg-paper-deep px-5 py-10 text-center lg:sticky lg:top-4">
           <p className="text-sm text-muted">{t("reverse.empty")}</p>
         </div>
       ) : (
         <div className="rise flex flex-col gap-3 lg:sticky lg:top-4">
           <div className="rounded-card border border-ink bg-ink px-5 py-5 text-paper">
-            <p className="label text-gold-leaf">{t("reverse.premium")}</p>
+            <p className="label text-white/55">{t("reverse.premium")}</p>
             <p className="num mt-2 text-[34px] leading-none font-semibold tracking-tight sm:text-[42px]">
               {money(result.impliedPremium, { signed: true })}
             </p>
-            <p className="num mt-3 border-t border-paper/15 pt-3 text-xs text-paper/70">
+            <p className="num mt-3 border-t border-white/15 pt-3 text-xs text-white/60">
               {percent(result.impliedPremiumPercent, { signed: true })}
               <span className="font-sans"> · {t("reverse.premiumPercent")}</span>
             </p>
           </div>
 
-          <div className="rounded-card border border-rule bg-card/80 px-4 py-2 sm:px-5">
+          <div className="rounded-card border border-rule bg-card px-4 py-2 sm:px-5">
             <div className="divide-y divide-rule-soft">
               <LedgerRow label={t("reverse.goldValue")} value={money(result.goldValue)} />
               <LedgerRow label={t("reverse.preTax")} value={money(result.preTaxTotal)} />
@@ -126,7 +126,7 @@ export function ReverseTab({
               <LedgerRow
                 label={t("reverse.premiumPerGram")}
                 value={money(result.impliedPremiumPerGram)}
-                tone="gold"
+                tone="strong"
                 strong
               />
               <LedgerRow

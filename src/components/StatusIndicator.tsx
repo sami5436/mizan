@@ -36,7 +36,7 @@ export function StatusIndicator({ differencePercent }: { differencePercent: numb
   const inset = dir === "rtl" ? "right" : "left";
 
   return (
-    <div className="rounded-card border border-rule bg-paper/50 px-4 py-4">
+    <div className="rounded-card border border-rule bg-paper-deep px-4 py-4">
       <div className="flex items-center justify-between gap-3">
         <h3 className="label">{t("status.title")}</h3>
         {differencePercent !== null ? (

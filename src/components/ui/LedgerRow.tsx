@@ -3,20 +3,20 @@ interface LedgerRowProps {
   value: string;
   /** Secondary text under the label, such as a percentage of gold value. */
   note?: string;
-  tone?: "default" | "muted" | "gold" | "ok" | "warn" | "high";
+  tone?: "default" | "muted" | "strong" | "ok" | "warn" | "high";
   strong?: boolean;
 }
 
 const toneClass = {
   default: "text-ink",
   muted: "text-muted",
-  gold: "text-gold",
+  strong: "font-medium text-ink",
   ok: "text-ok",
   warn: "text-warn",
   high: "text-high",
 } as const;
 
-/** One line of the breakdown: label, dotted leader, right aligned figure. */
+/** One line of the breakdown: label on the left, figure on the right. */
 export function LedgerRow({ label, value, note, tone = "default", strong }: LedgerRowProps) {
   return (
     <div className="flex flex-col gap-0.5 py-2">

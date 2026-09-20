@@ -41,14 +41,14 @@ export function RatesPanel({
     : null;
 
   return (
-    <section className="rounded-card border border-rule bg-card/80 backdrop-blur-[1px]">
+    <section className="rounded-card border border-rule bg-card ">
       <div className="flex flex-col gap-4 border-b border-rule-soft px-4 py-4 sm:flex-row sm:items-end sm:gap-5 sm:px-5">
         <div className="flex-1">
           <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-3">
             <label htmlFor="rate-24k" className="label">
               {t("rates.marketLabel")}
             </label>
-            <span className="label whitespace-nowrap text-gold">
+            <span className="label whitespace-nowrap text-muted">
               {source === "live" ? t("rates.source.live") : t("rates.source.manual")}
               {stamp ? ` · ${stamp}` : ""}
             </span>
@@ -67,14 +67,14 @@ export function RatesPanel({
           type="button"
           onClick={onFetch}
           disabled={loading}
-          className="focus-gold flex items-center justify-center gap-2 rounded-card border border-ink bg-ink px-4 py-3 text-sm font-medium text-paper transition-opacity hover:opacity-85 disabled:opacity-50 sm:w-auto"
+          className="focus-ring flex items-center justify-center gap-2 rounded-card border border-ink bg-ink px-4 py-3 text-sm font-medium text-paper transition-opacity hover:opacity-85 disabled:opacity-50 sm:w-auto"
         >
           <svg
             aria-hidden
             viewBox="0 0 16 16"
             className={`h-3.5 w-3.5 ${loading ? "animate-spin" : ""}`}
             fill="none"
-            stroke="#dcb45c"
+            stroke="#ffffff"
             strokeWidth="1.6"
           >
             <path d="M14 8a6 6 0 1 1-1.8-4.3" strokeLinecap="round" />
@@ -99,16 +99,16 @@ export function RatesPanel({
                 type="button"
                 onClick={() => onKaratSelect(rate.karat)}
                 aria-pressed={selected}
-                className={`focus-gold group flex flex-col gap-1 rounded-card border px-3 py-3 text-start transition-all ${
+                className={`focus-ring group flex flex-col gap-1 rounded-card border px-3 py-3 text-start transition-all ${
                   selected
-                    ? "border-gold bg-gold-wash shadow-[inset_0_0_0_1px_rgba(154,108,20,0.25)]"
-                    : "border-rule bg-paper/40 hover:border-gold/60"
+                    ? "border-ink bg-accent-wash shadow-[inset_0_0_0_1px_rgba(17,17,19,0.16)]"
+                    : "border-rule bg-card hover:border-ink/40"
                 }`}
               >
                 <span className="flex items-center justify-between">
                   <span className="num text-[13px] font-semibold text-ink">{rate.karat}K</span>
                   <span
-                    className={`h-1.5 w-1.5 rounded-full ${selected ? "bg-gold" : "bg-rule"}`}
+                    className={`h-1.5 w-1.5 rounded-full ${selected ? "bg-ink" : "bg-rule"}`}
                     aria-hidden
                   />
                 </span>

@@ -48,7 +48,7 @@ export function CompareTab({
           <button
             type="button"
             onClick={onAdd}
-            className="focus-gold rounded-card border border-ink bg-ink px-3 py-1.5 text-[11px] font-medium text-paper transition-opacity hover:opacity-85"
+            className="focus-ring rounded-card border border-ink bg-ink px-3 py-1.5 text-[11px] font-medium text-paper transition-opacity hover:opacity-85"
           >
             + {t("compare.add")}
           </button>
@@ -87,12 +87,12 @@ export function CompareTab({
       </Card>
 
       {rows.length === 0 ? (
-        <div className="rounded-card border border-dashed border-rule bg-card/50 px-5 py-10 text-center">
+        <div className="rounded-card border border-dashed border-rule bg-paper-deep px-5 py-10 text-center">
           <p className="text-sm text-muted">{t("compare.empty")}</p>
           <button
             type="button"
             onClick={onAdd}
-            className="focus-gold mt-3 rounded-card border border-ink bg-ink px-4 py-2 text-sm font-medium text-paper transition-opacity hover:opacity-85"
+            className="focus-ring mt-3 rounded-card border border-ink bg-ink px-4 py-2 text-sm font-medium text-paper transition-opacity hover:opacity-85"
           >
             + {t("compare.add")}
           </button>
@@ -104,8 +104,8 @@ export function CompareTab({
             return (
               <article
                 key={row.id}
-                className={`rise flex flex-col rounded-card border bg-card/80 ${
-                  row.isBest ? "border-ok shadow-[inset_0_0_0_1px_rgba(29,106,71,0.25)]" : "border-rule"
+                className={`rise flex flex-col rounded-card border bg-card ${
+                  row.isBest ? "border-ok shadow-[inset_0_0_0_1px_rgba(23,115,75,0.25)]" : "border-rule"
                 }`}
               >
                 <header className="flex items-center gap-2 border-b border-rule-soft px-3 py-2.5">
@@ -115,7 +115,7 @@ export function CompareTab({
                     onChange={(event) => onChange(row.id, { name: event.target.value })}
                     placeholder={`${t("compare.storePlaceholder")} ${index + 1}`}
                     aria-label={t("compare.storeName")}
-                    className="focus-gold min-w-0 flex-1 rounded-[2px] bg-transparent px-1 py-1 text-sm font-semibold text-ink outline-none placeholder:font-normal placeholder:text-muted/60"
+                    className="focus-ring min-w-0 flex-1 rounded-[2px] bg-transparent px-1 py-1 text-sm font-semibold text-ink outline-none placeholder:font-normal placeholder:text-muted/60"
                   />
                   {row.isBest ? (
                     <span className="shrink-0 rounded-full bg-ok/10 px-2 py-0.5 text-[10px] font-medium text-ok">
@@ -126,7 +126,7 @@ export function CompareTab({
                     type="button"
                     onClick={() => onRemove(row.id)}
                     aria-label={`${t("compare.remove")} ${draft.name || index + 1}`}
-                    className="focus-gold shrink-0 rounded-[2px] p-1 text-muted transition-colors hover:text-high"
+                    className="focus-ring shrink-0 rounded-[2px] p-1 text-muted transition-colors hover:text-high"
                   >
                     <svg viewBox="0 0 14 14" aria-hidden className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="1.5">
                       <path d="M3 3l8 8M11 3l-8 8" strokeLinecap="round" />
@@ -161,7 +161,7 @@ export function CompareTab({
                     label={t("compare.vsGold")}
                     value={money(row.differenceFromGoldValue, { signed: true })}
                     note={row.markupPercent !== null ? percent(row.markupPercent, { signed: true }) : undefined}
-                    tone="gold"
+                    tone="strong"
                   />
                   <LedgerRow
                     label={t("compare.vsExpected")}

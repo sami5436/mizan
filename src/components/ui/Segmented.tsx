@@ -32,17 +32,17 @@ export function Segmented<T extends string | number>({
             role="radio"
             aria-checked={selected}
             onClick={() => onChange(option.value)}
-            className={`focus-gold relative flex flex-col items-center justify-center gap-0.5 px-3 py-2.5 text-sm font-medium transition-colors ${
+            className={`focus-ring relative flex flex-col items-center justify-center gap-0.5 px-3 py-2.5 text-sm font-medium transition-colors ${
               grow ? "flex-1" : ""
             } ${index > 0 ? "border-s border-rule" : ""} ${
-              selected ? "bg-ink text-paper" : "text-muted hover:bg-gold-wash hover:text-ink"
+              selected ? "bg-ink text-paper" : "text-muted hover:bg-accent-wash hover:text-ink"
             }`}
           >
             <span className="num text-[15px] leading-tight">{option.label}</span>
             {option.caption ? (
               <span
                 className={`text-[10px] leading-none tracking-wide ${
-                  selected ? "text-gold-leaf" : "text-muted/70"
+                  selected ? "text-white/55" : "text-muted/70"
                 }`}
               >
                 {option.caption}

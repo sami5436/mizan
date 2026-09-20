@@ -46,14 +46,14 @@ export function FairPriceTab({
               <button
                 type="button"
                 onClick={onDemo}
-                className="focus-gold rounded-card border border-rule px-2.5 py-1 text-[11px] font-medium text-muted transition-colors hover:border-gold hover:text-gold"
+                className="focus-ring rounded-card border border-rule px-2.5 py-1 text-[11px] font-medium text-muted transition-colors hover:border-ink hover:text-ink"
               >
                 {t("actions.demo")}
               </button>
               <button
                 type="button"
                 onClick={onReset}
-                className="focus-gold rounded-card border border-rule px-2.5 py-1 text-[11px] font-medium text-muted transition-colors hover:border-high hover:text-high"
+                className="focus-ring rounded-card border border-rule px-2.5 py-1 text-[11px] font-medium text-muted transition-colors hover:border-high hover:text-high"
               >
                 {t("actions.reset")}
               </button>
@@ -117,7 +117,7 @@ export function FairPriceTab({
                       <button
                         type="button"
                         onClick={() => onChange({ priceOverride: null })}
-                        className="focus-gold shrink-0 rounded-card border border-rule px-2.5 py-2 text-[11px] font-medium text-gold transition-colors hover:border-gold"
+                        className="focus-ring shrink-0 rounded-card border border-rule px-2.5 py-2 text-[11px] font-medium text-muted transition-colors hover:border-ink"
                       >
                         {t("form.relink")}
                       </button>

@@ -30,7 +30,7 @@ export function NumberInput({
 }: NumberInputProps) {
   return (
     <div
-      className={`group flex items-center gap-2 rounded-card border bg-card px-3 transition-colors focus-within:border-gold ${
+      className={`group flex items-center gap-2 rounded-card border bg-card px-3 transition-colors focus-within:border-ink ${
         invalid ? "border-high" : "border-rule"
       }`}
     >

@@ -26,11 +26,9 @@ export default function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: "54px 64px",
-          background: "#f4efe7",
-          backgroundImage:
-            "radial-gradient(circle at 8% 0%, rgba(220,180,92,0.40), transparent 45%), radial-gradient(circle at 96% 10%, rgba(154,108,20,0.18), transparent 42%)",
+          background: "#ffffff",
           fontFamily: "sans-serif",
-          color: "#23211f",
+          color: "#111113",
         }}
       >
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
@@ -49,7 +47,7 @@ export default function OpengraphImage() {
               style={{
                 marginTop: 14,
                 fontSize: 27,
-                color: "#7a736b",
+                color: "#6e6e76",
                 letterSpacing: "0.02em",
               }}
             >
@@ -61,12 +59,12 @@ export default function OpengraphImage() {
               display: "flex",
               alignItems: "center",
               gap: 14,
-              border: "1px solid #e3dbcd",
+              border: "1px solid #e4e4e7",
               borderRadius: 999,
               padding: "10px 22px",
-              background: "#fdfbf7",
+              background: "#ffffff",
               fontSize: 22,
-              color: "#9a6c14",
+              color: "#111113",
               letterSpacing: "0.12em",
             }}
           >
@@ -83,14 +81,14 @@ export default function OpengraphImage() {
                 justifyContent: "space-between",
                 alignItems: "center",
                 padding: "16px 26px",
-                background: strong ? "#23211f" : "#fdfbf7",
-                color: strong ? "#f4efe7" : "#23211f",
-                border: `1px solid ${strong ? "#23211f" : "#e3dbcd"}`,
+                background: strong ? "#111113" : "#ffffff",
+                color: strong ? "#ffffff" : "#111113",
+                border: `1px solid ${strong ? "#111113" : "#e4e4e7"}`,
                 borderRadius: 14,
                 fontSize: strong ? 34 : 29,
               }}
             >
-              <span style={{ color: strong ? "#dcb45c" : "#7a736b" }}>{label}</span>
+              <span style={{ color: strong ? "rgba(255,255,255,0.65)" : "#6e6e76" }}>{label}</span>
               <span style={{ fontWeight: 600 }}>{value}</span>
             </div>
           ))}
@@ -101,13 +99,13 @@ export default function OpengraphImage() {
             display: "flex",
             justifyContent: "space-between",
             fontSize: 21,
-            color: "#7a736b",
-            borderTop: "1px solid #e3dbcd",
+            color: "#6e6e76",
+            borderTop: "1px solid #e4e4e7",
             paddingTop: 18,
           }}
         >
           <span>Gold value · Making charge · Tax · Markup %</span>
-          <span style={{ color: "#9a6c14" }}>English and Arabic</span>
+          <span style={{ color: "#111113" }}>English and Arabic</span>
         </div>
       </div>
     ),

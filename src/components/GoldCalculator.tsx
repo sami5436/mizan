@@ -232,9 +232,9 @@ export function GoldCalculator() {
                   type="button"
                   onClick={() => setTab(item.id)}
                   aria-current={active ? "page" : undefined}
-                  className={`focus-gold -mb-px border-b-2 px-3 py-2.5 text-[13px] font-medium transition-colors sm:px-4 sm:text-sm ${
+                  className={`focus-ring -mb-px border-b-2 px-3 py-2.5 text-[13px] font-medium transition-colors sm:px-4 sm:text-sm ${
                     active
-                      ? "border-gold text-ink"
+                      ? "border-ink text-ink"
                       : "border-transparent text-muted hover:text-ink"
                   }`}
                 >
@@ -288,7 +288,7 @@ export function GoldCalculator() {
           </div>
         </main>
 
-        <footer className="border-t border-rule bg-card/50">
+        <footer className="border-t border-rule bg-paper-deep">
           <div className="mx-auto flex max-w-5xl flex-col gap-1 px-4 py-6 sm:px-6">
             <p className="text-xs text-muted">{t("footer.note")}</p>
             <p className="label">{t("footer.disclaimer")}</p>
